@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = 'bcls-tk',
     packages = ['pkgA', 'pkgB'],
-    version = '0.0.1',
+    version = '0.0.2',
     description = 'Test for Binary Clustering Tool Kit',
     author = 'echonesis',
     author_email = 'echonesis@gmail.com',
