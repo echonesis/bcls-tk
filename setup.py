@@ -8,7 +8,7 @@ setup(
     author = 'echonesis',
     author_email = 'echonesis@gmail.com',
     url = 'https://github.com/echonesis/bcls-tk',
-    download_url = 'https://github.com/echonesis/bcls-tk/tarball/v0.0.1',
+    download_url = 'https://github.com/echonesis/bcls-tk/tarball/v0.0.2',
     keywords = ['binary image', 'clustering algorithm'],
     classifiers = [],
 )
