@@ -1,5 +1,16 @@
 import numpy as np
+import math
 
+def getSelectedWindow(obj, thr):
+    mu_x = obj[0][0]
+    mu_y = obj[0][1]
+    std_x = obj[1][0]
+    std_y = obj[1][1]
+    x_start = math.floor(mu_x - thr*std_x)
+    x_end = math.ceil(mu_x + thr*std_x)
+    y_start = math.floor(mu_y - thr*std_y)
+    y_end = math.ceil(mu_y + thr*std_y)
+    return [(x_start, x_end), (y_start, y_end)]
 
 def getGravity(x):
     xlist = list()
