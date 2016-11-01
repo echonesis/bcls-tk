@@ -25,7 +25,7 @@ def getGravity(x):
     return [(mu_x, mu_y), (std_x, std_y)]
 
 if __name__ == "__main__":
-    selectTerm = input('Please select your target test: (1:Gravity)')
+    selectTerm = input('Please select your target test: (1:Gravity ; 2:WindowRange)')
     print('Selected Term:', selectTerm)
     
     if int(selectTerm) == 1:
@@ -33,6 +33,11 @@ if __name__ == "__main__":
         result = getGravity(testList)
         print('mu:', result[0])
         print('std:', result[1])
+
+    elif int(selectTerm) == 2:
+        testList = [(1, 1), (1, 1)]
+        result = getSelectedWindow(testList, thr=1)
+        print('Range:', result)
 
     else:
         print('Not supported test.')
