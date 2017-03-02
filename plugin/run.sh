@@ -1,4 +1,4 @@
 #!/bin/sh
 
-python genSample.py TestSample.data 1000000
-python trMat.py TestSample.data
+python genSample.py -o TestSample.data -n 100
+python trMat.py -i TestSample.data

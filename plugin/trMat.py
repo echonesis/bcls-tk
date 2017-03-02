@@ -1,6 +1,7 @@
 import sys
 import numpy as np
 import time
+import argparse
 
 def read_in_bundle(inputFile, bNum=50):
     i = 0
@@ -22,10 +23,20 @@ def read_in_bundle(inputFile, bNum=50):
     f.close()
 
 if __name__ == '__main__':
+    # Parser Settings
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--infile", help="Input file")
+    args = parser.parse_args()
+    
+    # Input Settings
+    """
     inputFile = sys.argv[1]
+    """
+    inputFile = args.infile
+
     time1 = time.time()
     matGen = read_in_bundle(inputFile)
-    print 'Used Time:', time.time() - time1, '(s)'
+    print '[Status] Read-In Used Time:', time.time() - time1, '(s)'
     label = 0
     for i in matGen:
         if label == 0:
@@ -34,6 +45,6 @@ if __name__ == '__main__':
         else:
             result = np.concatenate((result, i), axis=1)
 
-    print('Dimension:', result.shape)
+    print '[Summary] Concatenated Dimension:', result.shape
 
-    print 'Used Time:', time.time() - time1, '(s)'
+    print '[Status] Total Used Time:', time.time() - time1, '(s)\n'
